@@ -6,8 +6,10 @@ import ReduxPromise from 'redux-promise';
 import { IndexRoute, Router, Route, hashHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
 
-import App from './components/App.jsx';
 import reducers from './reducers';
+import App from './components/app.jsx';
+import Landing from './components/landing.jsx'
+import Home from './components/home.jsx'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 const store = createStoreWithMiddleware(reducers);

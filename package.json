@@ -16,6 +16,7 @@
     "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "loadjs": "^3.5.0",
     "mongoose": "^4.9.6",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
