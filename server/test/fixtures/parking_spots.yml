@@ -1,25 +1,24 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  lat: 9.99
-  lng: 9.99
+approved_free:
+  lat: 37.7749
+  lng: -122.4194
   paid: false
-  hours: MyString
-  description: MyText
-  notes: MyText
-  address: MyString
-  submitter_name: MyString
-  submitter_email: MyString
+  description: Behind the Safeway
+  address: 123 Main St
   status: 1
 
-two:
-  lat: 9.99
-  lng: 9.99
-  paid: false
-  hours: MyString
-  description: MyText
-  notes: MyText
-  address: MyString
-  submitter_name: MyString
-  submitter_email: MyString
+approved_paid:
+  lat: 37.7750
+  lng: -122.4195
+  paid: true
+  hours: 9am-6pm Mon-Sat
+  description: Metered spot near the park
+  address: 456 Oak Ave
   status: 1
+
+pending_spot:
+  lat: 37.7751
+  lng: -122.4196
+  paid: false
+  description: Alley behind the coffee shop
+  address: 789 Elm St
+  status: 0
