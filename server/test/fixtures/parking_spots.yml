@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lat: 9.99
+  lng: 9.99
+  paid: false
+  hours: MyString
+  description: MyText
+  notes: MyText
+  address: MyString
+  submitter_name: MyString
+  submitter_email: MyString
+  status: 1
+
+two:
+  lat: 9.99
+  lng: 9.99
+  paid: false
+  hours: MyString
+  description: MyText
+  notes: MyText
+  address: MyString
+  submitter_name: MyString
+  submitter_email: MyString
+  status: 1
