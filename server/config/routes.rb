@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :spots, only: [ :index, :create ]
+
+  namespace :api do
+    namespace :admin do
+      resource :session, only: [ :create, :destroy ]
+    end
+  end
 end
