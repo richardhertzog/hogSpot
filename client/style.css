@@ -1,0 +1,30 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+header {
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 3rem);
+}
+
+#map {
+  flex: 1;
+  background: #e5e5e5;
+}
