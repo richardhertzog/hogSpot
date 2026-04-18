@@ -38,5 +38,22 @@ RSpec.describe "Spots", type: :request do
       expect(response).to have_http_status(:unprocessable_content)
       expect(response.parsed_body["errors"]).to be_present
     end
+
+    it "attaches a photo and returns a photo_url" do
+      photo = fixture_file_upload(Rails.root.join("spec/fixtures/files/test.jpg"), "image/jpeg")
+
+      post "/spots", params: {
+        parking_spot: {
+          lat: 37.7760,
+          lng: -122.4200,
+          description: "Spot with photo",
+          paid: false,
+          photo: photo
+        }
+      }
+
+      expect(response).to have_http_status(:created)
+      expect(response.parsed_body["photo_url"]).to be_present
+    end
   end
 end
