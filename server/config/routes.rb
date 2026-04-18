@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :admin do
       resource :session, only: [ :create, :destroy ]
+      resources :spots, only: [ :index, :update, :destroy ]
     end
   end
 end
