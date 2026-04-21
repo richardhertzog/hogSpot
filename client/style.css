@@ -24,6 +24,29 @@ main {
   height: calc(100dvh - 3rem);
 }
 
+#filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-btn {
+  padding: 0.35rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.filter-btn.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
 #map {
   flex: 1;
   background: #e5e5e5;
