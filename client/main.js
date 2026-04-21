@@ -51,6 +51,8 @@ map.on("load", async () => {
 
     renderMarkers(spots);
 
+    const toast = document.getElementById("submission-toast");
+
     map.on("click", (e) => {
       if (e.originalEvent.target.closest(".mapboxgl-marker")) return;
 
@@ -60,6 +62,11 @@ map.on("load", async () => {
       const dialog = buildSubmissionDialog(e.lngLat);
       document.body.appendChild(dialog);
       dialog.showModal();
+
+      dialog.addEventListener("spot-submitted", () => {
+        toast.classList.add("visible");
+        setTimeout(() => toast.classList.remove("visible"), 4000);
+      });
     });
   } catch (err) {
     console.error(err);

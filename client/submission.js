@@ -1,3 +1,5 @@
+import { submitSpot } from "./api.js";
+
 export function buildSubmissionDialog(lngLat) {
   const dialog = document.createElement("dialog");
   dialog.className = "submission-dialog";
@@ -61,6 +63,35 @@ export function buildSubmissionDialog(lngLat) {
   });
 
   dialog.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
+
+  const form = dialog.querySelector("form");
+  const errorEl = document.createElement("p");
+  errorEl.className = "form-errors";
+  errorEl.hidden = true;
+  form.appendChild(errorEl);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorEl.hidden = true;
+
+    const data = new FormData(form);
+    // FormData checkbox sends "on" or nothing — convert to boolean
+    data.set("paid", paidCheckbox.checked ? "1" : "0");
+
+    const submitBtn = form.querySelector("[type=submit]");
+    submitBtn.disabled = true;
+
+    try {
+      await submitSpot(data);
+      dialog.close();
+      dialog.dispatchEvent(new CustomEvent("spot-submitted", { bubbles: true }));
+    } catch (err) {
+      errorEl.textContent = err.errors ? err.errors.join(", ") : "Something went wrong.";
+      errorEl.hidden = false;
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 
   return dialog;
 }

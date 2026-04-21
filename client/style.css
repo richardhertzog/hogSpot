@@ -159,3 +159,33 @@ main {
   cursor: pointer;
   margin-top: 0.25rem;
 }
+
+.submission-dialog button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-errors {
+  color: #c0392b;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+#submission-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#submission-toast.visible {
+  opacity: 1;
+}

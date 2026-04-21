@@ -17,6 +17,7 @@ class SpotsController < ApplicationController
 
   def spot_params
     params.expect(parking_spot: [ :lat, :lng, :paid, :hours, :description, :notes, :address, :submitter_name, :submitter_email, :photo ])
+        .transform_values { |v| v.is_a?(String) && v.strip.empty? ? nil : v }
   end
 
   def spot_json(spot)

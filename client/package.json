@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/fetchSpots.test.js && node test/buildDetailDialog.test.js && node test/filterSpots.test.js && node test/submissionDialog.test.js"
+    "test": "node test/fetchSpots.test.js && node test/buildDetailDialog.test.js && node test/filterSpots.test.js && node test/submissionDialog.test.js && node test/submitSpot.test.js"
   },
   "keywords": [],
   "author": "",
