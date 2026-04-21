@@ -3,6 +3,7 @@ node_modules
 npm-debug.log
 bundles
 PLAN.md
+NOTES.md
 client/.env
 client/config.js
 client/node_modules
