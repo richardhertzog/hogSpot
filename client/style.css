@@ -99,3 +99,63 @@ main {
   border-radius: 0.5rem;
   margin-top: 0.5rem;
 }
+
+.submission-dialog {
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  width: min(400px, 90vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.submission-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.submission-dialog h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+}
+
+.submission-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.submission-dialog label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.submission-dialog label.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.submission-dialog input[type="text"],
+.submission-dialog input[type="email"],
+.submission-dialog textarea {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.submission-dialog button[type="submit"] {
+  padding: 0.6rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 0.25rem;
+}

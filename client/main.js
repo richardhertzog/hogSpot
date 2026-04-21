@@ -2,6 +2,7 @@ import { MAPBOX_TOKEN } from "./config.js";
 import { fetchSpots } from "./api.js";
 import { buildDetailDialog } from "./dialog.js";
 import { filterSpots } from "./filters.js";
+import { buildSubmissionDialog } from "./submission.js";
 
 mapboxgl.accessToken = MAPBOX_TOKEN;
 
@@ -49,6 +50,17 @@ map.on("load", async () => {
     });
 
     renderMarkers(spots);
+
+    map.on("click", (e) => {
+      if (e.originalEvent.target.closest(".mapboxgl-marker")) return;
+
+      const existing = document.querySelector("dialog.submission-dialog");
+      if (existing) existing.remove();
+
+      const dialog = buildSubmissionDialog(e.lngLat);
+      document.body.appendChild(dialog);
+      dialog.showModal();
+    });
   } catch (err) {
     console.error(err);
   }
