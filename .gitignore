@@ -5,3 +5,4 @@ bundles
 PLAN.md
 client/.env
 client/config.js
+client/node_modules

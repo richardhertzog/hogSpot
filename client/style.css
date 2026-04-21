@@ -28,3 +28,51 @@ main {
   flex: 1;
   background: #e5e5e5;
 }
+
+.spot-dialog {
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  max-width: 360px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.spot-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.dialog-address {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.dialog-paid {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dialog-description,
+.dialog-notes {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.dialog-photo {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
