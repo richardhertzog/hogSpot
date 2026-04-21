@@ -1,11 +1,13 @@
 import assert from "node:assert/strict";
 import { submitSpot } from "../api.js";
 
-// Success case
+// Success case — confirm payload is FormData with nested keys including photo
 globalThis.fetch = async (url, opts) => {
   assert.equal(url, "http://localhost:3000/spots");
   assert.equal(opts.method, "POST");
   assert.ok(opts.body instanceof FormData);
+  assert.ok(opts.body.has("parking_spot[description]"));
+  assert.ok(opts.body.has("parking_spot[photo]"));
   return { ok: true, json: async () => ({ id: 42, status: "pending" }) };
 };
 
@@ -15,6 +17,7 @@ formData.set("lat", "37.7749");
 formData.set("lng", "-122.4194");
 formData.set("paid", "0");
 formData.set("address", "Civic Center, SF");
+formData.set("photo", new Blob(["fake image"], { type: "image/jpeg" }), "photo.jpg");
 
 const result = await submitSpot(formData);
 assert.equal(result.id, 42);

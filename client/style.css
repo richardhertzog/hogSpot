@@ -160,6 +160,14 @@ main {
   margin-top: 0.25rem;
 }
 
+#photo-preview {
+  width: 100%;
+  border-radius: 0.375rem;
+  margin-top: 0.5rem;
+  object-fit: contain;
+  max-height: 300px;
+}
+
 .submission-dialog button[type="submit"]:disabled {
   opacity: 0.6;
   cursor: not-allowed;

@@ -49,6 +49,7 @@ export function buildSubmissionDialog(lngLat) {
       <label>
         Photo (optional)
         <input type="file" name="photo" accept="image/*" />
+        <img id="photo-preview" hidden alt="Photo preview" />
       </label>
 
       <button type="submit">Submit spot</button>
@@ -63,6 +64,19 @@ export function buildSubmissionDialog(lngLat) {
   });
 
   dialog.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
+
+  const photoInput = dialog.querySelector('[name="photo"]');
+  const photoPreview = dialog.querySelector("#photo-preview");
+
+  photoInput.addEventListener("change", () => {
+    const file = photoInput.files[0];
+    if (!file) {
+      photoPreview.hidden = true;
+      return;
+    }
+    photoPreview.src = URL.createObjectURL(file);
+    photoPreview.hidden = false;
+  });
 
   const form = dialog.querySelector("form");
   const errorEl = document.createElement("p");
